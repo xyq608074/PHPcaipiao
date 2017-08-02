@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <?php foreach($system as $value){ ?>
+    <meta name="keywords" content="<?php echo $value['webkeywords']; ?>">
+    <meta name="description" content="<?php echo $value['webdescription']; ?>">
+    <title><?php echo $value['webtitle']; ?></title>
+    <?php } ?>
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/main.css">
+
+    <script src="public/js/htmlajax.js"></script>
+    <script src="public/js/reload.js"></script>
+    <script src="public/js/time.js"></script>
+</head>
+<body>
+    <div class="content">
+        <?php include CUR_VIEW."header.php"; ?>
+        <div class="info" id="bjpk10info"></div>
+        <div class="info" id="cqsscinfo"></div>
+        <div class="info" id="xyftinfo"></div>
+        <?php include CUR_VIEW."footer.php"?>
+    </div>
+</body>
+</html>

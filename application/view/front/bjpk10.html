@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/list.css">
+    <script src="public/js/hisbtn.js"></script>
+</head>
+<body>
+
+<div class="info">
+    <div class="logo">
+        <img src="public/img/beijingpk.png" alt="重庆时时彩">
+        <span><b> 北京PK10 </b></span>
+    </div>
+    <div class="txtnum">
+        <span>北京PK10 第 <b> <?php echo $bjinfo['expect']; ?> </b> 期 开奖号码</span>
+        <ul>
+            <?php
+            foreach($opencodeArr as $value) {
+                 if(empty($value)){
+                      echo "等 待 中...";
+                 }else{
+                      echo "<li class='n{$value}'>".preg_replace('/^0*/', '', $value)."</li>";
+                 }
+            }
+            ?>
+        </ul>
+        <div class="zuhe">
+            <table border="1">
+                <tr>
+                    <td colspan="5"><b>1-5龙虎</b></td>
+                </tr>
+                <tr>
+                    <?php foreach($longhu as $value) { ?>
+                    <td><?php echo $value;?></td>
+                    <?php } ?>
+                </tr>
+            </table>
+            <table border="1">
+                <tr>
+                    <td colspan="5"><b>冠亚和</b></td>
+                </tr>
+                <tr>
+                    <?php foreach ($guanyahe as $value) { ?>
+                    <td><?php echo $value ?></td>
+                    <?php } ?>
+                </tr>
+            </table>
+            <?php if(empty($_SESSION['logininfo'])){ ?>
+            <a href="index.php?c=login&a=login" onclick="alert('请先登陆才能查看历史');" class="button"> 点击查看历史 </a>
+            <?php }else{ ?>
+            <a href="index.php?c=list&a=list&nav=北京pk拾" class="button" id="hisbtn" onclick="histbtnkai();"> 点击查看历史 </a>
+            <!--<a href="index.php?c=list&a=list&nav=重庆时时彩" class="button" id="hisbtn" onclick="histbtnkai()"> 点击查看历史 </a>-->
+            <?php } ?>
+            <!--<?php if(empty($_SESSION['logininfo'])){ ?>-->
+            <!--<a href="index.php?c=login&a=login" onclick="alert('请先登陆才能查看历史');" class="button"> 点击查看历史 </a>-->
+            <!--<?php }else{ ?>-->
+            <!--<a href="index.php?c=list&a=list&nav=北京pk拾" class="button" id="hisbtn" onclick="histbtnkai();"> 点击查看历史 </a>-->
+            <!--<?php } ?>-->
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

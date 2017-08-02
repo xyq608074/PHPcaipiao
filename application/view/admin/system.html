@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8" />
+    <title>main</title>
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/basic.css" />
+    <script src="../js/admin_content.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+</head>
+
+<body id="main">
+
+<div class="map">
+    内容管理 &gt;&gt; 查看文档列表 &gt;&gt; <strong id="title">系统信息列表</strong>
+</div>
+
+<ol>
+    <li><a href="index.php?p=admin&c=system&a=system" class="selected">系统信息列表</a></li>
+</ol>
+<form action="index.php?p=admin&c=system&a=update" method="post" class="system">
+    <table cellspacing="0">
+        <tr><th width="200px">名称</th><th>信息</th></tr>
+        <?php foreach($systemlist as $value){ ?>
+        <input type="hidden" name="id" value="<?php echo $value['id']; ?>">
+        <tr>
+            <td>网站名称<input type="hidden" name="webtitlename" value="网站名称"></td>
+            <td><input type="text" name="webtitle" class="text" value="<?php echo $value['webtitle']?>"></td>
+        </tr>
+        <tr>
+            <td>网站关键词<input type="hidden" name="webkeywordsname" value="网站关键词"></td>
+            <td><input type="text" name="webkeywords" class="text" value="<?php echo $value['webkeywords']?>"></td>
+        </tr>
+        <tr>
+            <td>网站描述<input type="hidden" name="webdescriptionname" value="网站描述"></td>
+            <td><input type="text" name="webdescription" class="text" value="<?php echo $value['webdescription']?>"></td>
+        </tr>
+        <tr>
+            <td></td>
+            <td><input type="submit" value="提交"></td>
+        </tr>
+        <?php } ?>
+    </table>
+</form>
+</body>
+</html>

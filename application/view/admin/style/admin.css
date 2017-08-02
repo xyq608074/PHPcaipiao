@@ -1,0 +1,325 @@
+@CHARSET "UTF-8";
+body,h1,h2,h3,p,form,ul,li,dl,dt,dd,ol{
+	padding:0;
+	margin:0;
+}
+body {
+	background: #fff;
+	font-size:12px;
+}
+ul,ol {
+	list-style-type:none;
+}
+#top {
+	background:url(../img/admin_top_bg.gif);
+}
+#top h1 {
+	width:150px;
+	height:80px;
+	font-size:12px;
+	background:url(../img/logosmall.png) no-repeat;
+	text-indent:-9999px;
+	float:left;
+}
+#top ul {
+	float:left;
+	padding:47px 0 0 10px;
+}
+#top ul li {
+	padding:0 0 0 5px;
+	float:left;
+}
+#top ul li a {
+	width:58px;
+	height:33px;
+	line-height:33px;
+	text-align:center;
+	display:block;
+	background:url(../img/li_bg.png) no-repeat left bottom;
+	font-size:14px;
+	font-weight:bold;
+	text-decoration:none;
+	color:#fff;
+}
+#top ul li a.selected {
+	background-position:right bottom;
+	color:#3b6ea5;
+}
+#top p {
+	float:right;
+	padding:33px 20px 0 0;
+	color:#fff;
+}
+#top p a {
+	text-decoration:none;
+	color:#fff;
+}
+#top p a:hover {
+	text-decoration:underline;
+}
+#sidebar {
+	background:#f7fbfc url(../img/sidebar_right.png) repeat-y right;
+}
+#sidebar dl {
+	padding:20px;
+	text-indent:2px;
+}
+#sidebar dl dt {
+	font-size:14px;
+	color:#3b6ea5;
+	font-weight:bold;
+	border-bottom:1px solid #ccc;
+	padding:5px 0 ;
+	margin:5px 0;
+}
+#sidebar dl dd {
+	height:22px;
+	line-height:22px;
+}
+#sidebar dl dd a {
+	color:#333;
+	text-decoration:none;
+}
+#sidebar dl dd a:hover {
+	text-decoration:underline;
+}
+#main {
+    margin:0;
+	background:#fff;
+}
+#main div.map {
+	padding:15px;
+	color:#333;
+}
+#main div.map strong {
+	color:green;
+}
+
+#main table.cke_dialog{
+    width:auto;
+}
+
+#main table {
+	width:100%;
+    padding-left: 25px;
+    margin-left: auto;
+    margin-right:auto;
+	text-align:center;
+}
+#main table.cke_dialog_footer_buttons{
+    width:auto;
+}
+#main table a.cke_dialog_ui_button_ok{
+    color: #fff;
+}
+#main table a.cke_dialog_ui_button_cancel{
+    color:#484848;
+}
+#main table.cke_dialog_ui_hbox td{
+    border-bottom:none;
+}
+#main table.cke_dialog_contents td{
+    border-bottom:none;
+}
+#main table.cke_dialog tr:hover{
+    background: none;
+}
+#main table.user{
+    text-align: left;
+}
+#main table.user select{
+    width:220px;
+    height:22px;
+    border:1px solid #ccc;
+    background:#fff;
+}
+
+#main table.user span.red{
+    color: red;
+}
+
+#main table.user img.face{
+    vertical-align: top;
+    cursor: pointer;
+}
+#main table.left {
+	text-align:left;
+}
+#main table.left tr td p{
+    padding:0 0 0 50px;
+    width: 450px;
+}
+#main table tr {
+	background:#fff;
+}
+#main table tr:hover {
+	background:#ffffcc;
+}
+#main table th, #main table td {
+	height:30px;
+	line-height:30px;
+	color:#333;
+}
+#main table th {
+	background:#eef3f7;
+	border-bottom:1px solid #d5dfe8;
+	font-weight:normal;
+}
+#main table td {
+	border-bottom:1px solid #eee;
+}
+
+
+#main table.content td {
+    text-align:left;
+    padding-left:5px;
+}
+#main table td span.red{
+    color: red;
+}
+#main table td span.green{
+    color: green;
+}
+#main table.content td span.red{
+    color: red;
+}
+#main table.content td input.text {
+    width:440px;
+	padding-left: 3px;
+}
+#main table.content td input.small {
+    width:100px;
+}
+#main table.content td select {
+    border:1px solid #ccc;
+    width:150px;
+    height:22px;
+}
+#main table.content td textarea {
+    margin:0;
+    width:440px;
+    height:80px;
+    overflow:auto;
+}
+#main table.content td span.middle {
+    vertical-align:30px;
+}
+
+#main table.content tr td img{
+    width:150px;
+    height:100px;
+}
+
+#main a {
+	color:#3b6ea5;
+	text-decoration:none;
+}
+#main a:hover {
+	text-decoration:underline;
+}
+
+#main form input.text {
+	width:220px;
+	height:23px;
+	background:#fff;
+	border:1px solid #ccc;
+}
+#main form.system input.text{
+	width:400px;
+	padding-left: 3px;
+}
+
+#main form input.sort {
+	width: 50px;
+	text-align: center;
+}
+
+#main form textarea {
+    font-size: 14px;
+	vertical-align: top;
+}
+#main form select {
+	width:100px;
+	height:25px;
+	background:#fff;
+}
+#main form input.submit {
+	cursor:pointer;
+	margin:0 0 0 47px;
+}
+#main form input.sublevel {
+	margin:0 0 0 60px;
+}
+#main ol{
+	margin:0 0 0 34px;
+	width:auto;
+	height:30px;
+}
+#main ol li{
+	float: left;
+	height:30px;
+	line-height:30px;
+	width:80px;
+	text-align: center;
+	margin: 10px;
+}
+#main ol li a{
+	display: block;
+	height:30px;
+	width:80px;
+	color: #3A6DA4;
+	border: 1px solid #3A6DA4;
+}
+#main ol li a.selected{
+	display: block;
+	height:30px;
+	width:80px;
+	color: #fff;
+	background:#3A6DA4;
+}
+
+#adminLogin {
+	width:350px;
+	margin:100px auto;
+	color:#666;
+	font-size:14px;
+}
+#adminLogin fieldset {
+	padding:20px;
+}
+#adminLogin legend {
+	font-size:16px;
+	font-weight:bold;
+}
+#adminLogin label {
+	display:block;
+	margin:5px;
+}
+#adminLogin label.t {
+	color:#999;
+	text-indent:56px;
+}
+#adminLogin label input.text {
+	width:220px;
+	height:27px;
+	border:1px solid #666;
+	background:#eee;
+}
+
+#adminLogin input.submit {
+	margin: 0 0 0 60px;
+	cursor:pointer;
+}
+#adminLogin label img {
+	margin:0 0 0 56px;
+	cursor:pointer;
+}
+#page select.select {
+    width: 120px;
+    height: 24px;
+}
+
+
+
+
+

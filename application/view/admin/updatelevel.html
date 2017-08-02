@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>添加等级</title>
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/basic.css" />
+    <script src="js/admin_level.js"></script>
+</head>
+<body id="main">
+
+<div class="map">
+    内容管理 &gt;&gt; 设置网站等级 &gt;&gt; <strong id="title">添加等级</strong>
+</div>
+<ol>
+    <li><a href="index.php?p=admin&c=level&a=level" >等级列表</a></li>
+    <li><a href="index.php?p=admin&c=level&a=updatelevel&id=<?php echo $updateone['id']; ?>" class="selected">修改等级</a></li>
+</ol>
+<form method="post" action="index.php?p=admin&c=level&a=update">
+    <table cellspacing="0" class="left">
+        <input type="hidden" name="id" class="text" value="<?php echo $updateone['id']; ?>"/>
+        <tr><td>等级名称：<input type="text" name="level_name" class="text" value="<?php echo stripslashes($updateone['level_name']); ?>"/></td></tr>
+        <tr><td>等级说明：<textarea name="level_info" id="" cols="30" rows="10"><?php echo stripslashes($updateone['level_info']); ?></textarea></td></tr>
+        <tr><td><input type="submit" name="send" value="修改等级" class="submit sublevel" /> [ <a href="index.php?p=admin&c=level&a=level">返回列表</a> ]</td></tr>
+    </table>
+</form>
+</body>
+</html>

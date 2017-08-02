@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+<link rel="stylesheet" type="text/css" href="application/view/admin/style/basic.css" />
+</head>
+<body id="main">
+
+<div class="map">
+	管理首页 &gt;&gt; 会员管理 &gt;&gt; <strong id="title">修改会员</strong>
+</div>
+<ol>
+	<li><a href="index.php?p=admin&c=member&a=member">会员列表</a></li>
+	<li><a href="index.php?p=admin&c=member&a=updatemember&id=<?php echo $updateinfo['id']; ?>" class="selected">修改会员</a></li>
+</ol>
+
+	<form method="post" name="fmmember" action="index.php?p=admin&c=member&a=update">
+		<table cellspacing="0" class="user">
+			<input type="hidden" name="id" value="<?php echo $updateinfo['id']; ?>">
+            <tr><td>用 户 名 ： <?php echo $updateinfo['loginname']; ?></td>
+            <tr><td>密　　码：<input type="password" class="text" name="loginpwd" /> <span class="red">[必填]</span> ( *密码不得小于6位 )</td>
+			<tr><td>密码确认：<input type="password" class="text" name="notpwd" /> <span class="red">[必填]</span> ( *密码确认和密码一致 )</td>
+            <tr><td>电子邮件：<input type="text" class="text" name="email" value="<?php echo $updateinfo['email']; ?>"/> <span class="red">[必填]</span> </td>
+            <tr><td>手机电话：<input type="text" class="text" name="phone" value="<?php echo $updateinfo['phone']; ?>"/> <span class="red">[必填]</span> </td>
+
+			<tr><td><input type="submit" name="send" value="修改会员" class="submit submember" /> [ <a href="index.php?p=admin&c=member&a=member">返回列表</a> ]</td></tr>
+		</table>
+	</form>
+
+</body>
+</html>

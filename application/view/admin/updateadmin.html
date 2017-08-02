@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+<link rel="stylesheet" type="text/css" href="application/view/admin/style/basic.css" />
+<script src="application/view/admin/js/admin_manage.js"></script>
+</head>
+<body id="main">
+
+<div class="map">
+	管理首页 &gt;&gt; 管理员管理 &gt;&gt; <strong id="title">修改管理员</strong>
+</div>
+<ol>
+	<li><a href="index.php?p=admin&c=admin&a=admin" class="selected">管理员列表</a></li>
+	<li><a href="index.php?p=admin&c=admin&a=updateadmin&id=<?php echo $_GET['id'];?>">修改管理员</a></li>
+</ol>
+	<form method="post" action="index.php?p=admin&c=admin&a=update">
+		<table cellspacing="0" class="left">
+			<input type="hidden" name="id" value="<?php echo $updateone['id']; ?>">
+			<tr><td>用户名：<input type="text" name="admin_name" class="text" value="<?php echo stripslashes($updateone['admin_name']);?>" readonly="readonly"/></td></tr>
+			<tr><td>密　码：<input type="password" name="admin_pwd" class="text" /></td></tr>
+			<tr><td><input type="submit" name="send" value="修改管理员" class="submit" /> [ <a href="index.php?p=admin&c=admin&a=admin">返回列表</a> ]</td></tr>
+		</table>
+	</form>
+</body>
+</html>

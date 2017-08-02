@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8" />
+    <title>main</title>
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/basic.css" />
+    <script src="application/view/admin/js/admin_content.js"></script>
+    <script src="application/view/admin/ckeditor/ckeditor.js"></script>
+</head>
+
+<body id="main">
+
+<div class="map">
+    内容管理 &gt;&gt; 查看文档列表 &gt;&gt; <strong id="title">新增文档</strong>
+</div>
+
+<ol>
+    <li><a href="index.php?p=admin&c=content&a=content" >文档列表</a></li>
+    <li><a href="index.php?p=admin&c=content&a=updatecontent&id=<?php echo $_GET['id']?>" class="selected">修改文档</a></li>
+</ol>
+
+    <form method="post" name="content" action="index.php?p=admin&c=content&a=update" enctype="multipart/form-data">
+        <table cellspacing="0" class="content" border="0">
+            <tr><th><strong>修改文档</strong></th></tr>
+
+            <input type="hidden" name="id" value="<?php echo $contentmodel['id'];?>">
+            <tr><td>文档标题：<input type="text" name="title" class="text" value="<?php echo $contentmodel['title'];?>"/> <span class="red">[必填]</span>( * 在2-50个字符之间 )</td></tr>
+            <tr><td>栏　　目：<select name="nav">
+                                <option value="0">请选择一个栏目类别</option>
+                                    <?php foreach($navlist as $value){ ?>
+                                        <option value="<?php echo $value['id'];?>" <?php echo $value['id']==$contentmodel['nav']?"selected":""; ?> ><?php echo $value['nav_name'];?></option>
+                                    <?php } ?>
+                             </select> <span class="red">[必填]</span> </td></tr>
+            <tr><td>定义属性：<?php echo $checked; ?>
+                </td></tr>
+            <tr><td>标　　签：<input type="text" name="tag" class="text" value="<?php echo $contentmodel['tag'];?>"/> ( * 每个标签用逗号隔开,不得大于30个字符 ) </td></tr>
+            <tr><td>关 键 字：<input type="text" name="keyword" class="text" value="<?php echo $contentmodel['keyword'];?>"/> ( * 每个关键字用逗号隔开,不得大于30个字符 ) </td></tr>
+            <tr>
+                <td>缩 略 图：<input type="text" name="thumbnail" class="text" id="thumbnail" readonly value="<?php echo $contentmodel['thumbnail'];?>"/>
+                    <input type="button" value="点击上传" name="file" onclick="fileOpenWindow('index.php?p=admin&c=content&a=addupload','upload',400,150)">
+                    ( * 缩略图支持jpg png gif格式 并且不得大于200KB )
+                             <img name="uploadpic" style="display: block;padding-left: 55px;" id="uploadpic" src="<?php echo $contentmodel['thumbnail'];?>">
+                </td>
+            </tr>
+            <tr><td>作　　者：<input type="text" name="author" class="text" value="<?php echo $contentmodel['author'];?>"/> ( * 作者不得大于20个字符 ) </td></tr>
+            <tr><td><span class="middle">内容摘要：</span><textarea name="info"> <?php echo $contentmodel['info'];?> </textarea> ( * 内容摘要不得大于200个字符 ) </td></tr>
+            <tr>
+                <td><span>详细内容：</span>
+                    <textarea style="width:100%;" id="ckcontent" name="content" class="ckeditor"><?php echo $contentmodel['content'];?></textarea>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    评论选项：<?php echo $commend; ?>
+                </td>
+            </tr>
+            <tr><td>文档排序：<select name="sort">
+                        <?php echo $sort; ?>
+                    </select>
+                    　 　　消费金币：<input type="text" name="gold" value="<?php echo $contentmodel['gold'];?>" class="text small" />
+                </td></tr>
+            <tr><td>阅读权限：<select name="readlimit">
+                            <?php echo $readlimit; ?>
+                    </select>
+                    　 　　浏览次数：<input type="text" name="count" value="<?php echo $contentmodel['count'];?>" class="text small" />
+                </td></tr>
+
+            <tr><td><input type="submit" name="send" value="发布文档"/> <input type="reset" value="重置" /></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </form>
+</body>
+</html>

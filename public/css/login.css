@@ -1,0 +1,78 @@
+.login{
+    width: 700px;
+    min-height: 200px;
+    margin: 10px auto;
+}
+.login form fieldset{
+    border:3px solid #FA8E19;
+    border-radius: 10px;
+}
+.login form{
+    width:290px;
+}
+
+#adminLogin {
+    width:350px;
+    margin:50px auto;
+    color:#666;
+    font-size:14px;
+}
+#adminLogin fieldset {
+    padding:20px;
+}
+#adminLogin legend {
+    font-size:16px;
+    font-weight:bold;
+}
+#adminLogin label {
+    display:block;
+    margin:5px;
+}
+#adminLogin label.t {
+    color:#999;
+    text-indent:56px;
+}
+#adminLogin label input.text {
+    width:220px;
+    height:27px;
+    border:1px solid #FA8E19;
+    background:#FCFFC9;
+    padding-left:3px;
+}
+
+#adminLogin input.submit {
+    margin: 0 0 0 60px;
+    cursor:pointer;
+    width:50px;
+    height: 30px;
+    background: #FA8E19;
+    border:1px;
+    border-radius: 5px;
+    color: #fff;
+}
+#adminLogin label img {
+    margin:0 0 0 56px;
+    cursor:pointer;
+}
+
+@media screen and (max-width:787px){
+    .login{
+        width: 300px;
+    }
+    #adminLogin {
+        width:300px;
+        margin:50px auto;
+        color:#666;
+        font-size:14px;
+    }
+    #adminLogin label.t {
+        text-indent: 5px;
+    }
+    #adminLogin label img {
+        margin: 0px;
+        cursor: pointer;
+    }
+    #adminLogin input.submit{
+        margin:0;
+    }
+}

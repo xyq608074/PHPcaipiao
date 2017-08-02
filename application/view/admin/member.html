@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+<link rel="stylesheet" type="text/css" href="application/view/admin/style/basic.css" />
+</head>
+<body id="main">
+
+<div class="map">
+	管理首页 &gt;&gt; 会员管理 &gt;&gt; <strong id="title">会员列表</strong>
+</div>
+<ol>
+	<li><a href="index.php?p=admin&c=member&a=member" class="selected">会员列表</a></li>
+	<li><a href="index.php?p=admin&c=member&a=addmember">新增会员</a></li>
+</ol>
+
+<table cellspacing="0">
+	<tr><th>编号</th><th>会员名称</th><th>会员邮箱</th><th>会员电话</th><th>登陆次数</th><th>登陆时间</th><th>登陆IP</th><th>会员登陆所在地</th><th>操作</th></tr>
+    <?php foreach($memberlist as $key=>$value){ ?>
+    <?php if(!empty($value)){ ?>
+	<tr>
+		<td><?php echo $key+1; ?></td>
+		<td><?php echo $value['loginname'] ?></td>
+        <td><?php echo $value['email'] ?></td>
+        <td><?php echo $value['phone'] ?></td>
+        <td><?php echo $value['count'] ?></td>
+        <td><?php echo $value['logintime'] ?></td>
+        <td><?php echo $value['loginip'] ?></td>
+        <td><?php echo $this->getiptoaddress($value['loginip'])?$this->getiptoaddress($value['loginip']):"无查询";?></td>
+		<td><a href="index.php?p=admin&c=member&a=updatemember&id=<?php echo $value['id']?>">修改</a> | <a href="index.php?p=admin&c=member&a=delete&id=<?php echo $value['id']?>" onclick="return confirm('真的要删除吗?')">删除</a></td>
+	</tr>
+    <?php }else{ ?>
+	<tr><td colspan="6">没有数据</td></tr>
+    <?php }} ?>
+</table>
+<div id="page">
+    <?php echo $page->showTxtPage(); ?>
+</div>
+
+</body>
+</html>

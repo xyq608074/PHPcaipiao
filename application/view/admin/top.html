@@ -1,0 +1,25 @@
+<!DOCTYPE html >
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>top</title>
+<link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+<script type="text/javascript" src="application/view/admin/js/admin_top_nav.js"></script>
+</head>
+<body id="top">
+
+<h1>LOGO</h1>
+
+<ul>
+	<li hidden><a href="sidebar.html" target="sidebar" id="nav1" class="selected" onclick="admin_top_nav(1)">首页</a></li>
+	<li><a href="index.php?p=admin&c=index&a=sidebarn" target="sidebar" id="nav2" onclick="admin_top_nav(2)">内容</a></li>
+	<li><a href="index.php?p=admin&c=index&a=sidebarmember" id="nav3" target="sidebar" onclick="admin_top_nav(3)">会员</a></li>
+	<li><a href="index.php?p=admin&c=index&a=sidebarsystem" id="nav4" target="sidebar" onclick="admin_top_nav(4)">系统</a></li>
+</ul>
+
+<p>
+	您好，<strong><?php echo $_SESSION['userinfo']['admin_name']?></strong>  [ <a href="../" target="_blank">去首页</a> ] [ <a href="index.php?p=admin&c=login&a=logout" target="_parent">退出</a> ]
+</p>
+
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+<link rel="stylesheet" type="text/css" href="application/view/admin/style/basic.css" />
+<script src="application/view/admin/js/admin_manage.js"></script>
+</head>
+<body id="main">
+
+<div class="map">
+	管理首页 &gt;&gt; 管理员管理 &gt;&gt; <strong id="title">管理员列表</strong>
+</div>
+<ol>
+	<li><a href="index.php?p=admin&c=admin&a=admin" class="selected">管理员列表</a></li>
+	<li><a href="index.php?p=admin&c=admin&a=addadmin">新增管理员</a></li>
+</ol>
+
+<table cellspacing="0">
+	<tr><th>编号</th><th>管理员名称</th><th>登陆次数</th><th>最近登陆IP</th><th>上次登陆IP</th><th>最近登陆时间</th><th>上次登陆时间</th><th>操作</th></tr>
+	<?php if(!empty($adminlist)) {?>
+	<?php foreach($adminlist as $key=>$value) { ?>
+	<tr>
+		<td><?php echo $key+1; ?></td>
+		<td><?php echo stripslashes($value['admin_name']); ?></td>
+		<td><?php echo $value['login_count']; ?></td>
+		<td><?php echo $value['login_ip']; ?></td>
+		<td><?php echo $value['last_ip']; ?></td>
+		<td><?php echo $value['login_time']; ?></td>
+		<td><?php echo $value['last_time']; ?></td>
+		<td><a href="index.php?p=admin&c=admin&a=updateadmin&id=<?php echo $value['id'];?>">修改</a> | <a href="index.php?p=admin&c=admin&a=delete&id=<?php echo $value['id'];?>" onclick="return confirm('真的要删除吗?')">删除</a></td>
+	</tr>
+	<?php } ?>
+	<?php } else { ?>
+		<tr><td colspan="8">没有数据</td></tr>
+	<?php } ?>
+</table>
+	<div id="page">
+		<?php echo $page->showNumPage(); ?>
+	</div>
+
+</body>
+</html>

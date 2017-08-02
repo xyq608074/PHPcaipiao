@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <style>
+        .content{
+            width:100%;
+        }
+        .contenttitle{
+            width:90%;
+            margin:0 auto;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+<div class="content">
+    <?php if(!empty($_GET['name'])) { ?>
+    <div class="contenttitle">
+        第 <?php echo $planjihua['Expect']?> 期 <?php echo $planjihua['Id']?>
+    </div>
+    <pre><?php print_r($planjihua['Value']); ?>
+    </pre>
+    <?php }else{ ?>
+        请先选择一个计划
+    <?php } ?>
+</div>
+</body>
+</html>

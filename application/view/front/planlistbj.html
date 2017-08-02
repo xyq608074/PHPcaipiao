@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <style>
+        a{
+            font-size: 14px;
+            text-decoration: none;
+            color: #666;
+            display: block;
+            padding:5px 10px;
+            float: left;
+            border:1px solid #666;
+            margin:5px 10px;
+        }
+        p{
+            margin:5px 10px;
+        }
+        p b{
+            color: red;
+        }
+    </style>
+</head>
+<body><br>
+    <p>第 <b><?php echo $planexp; ?></b> 期</p><br>
+    <?php foreach(array_filter($planlist) as $value) { ?>
+    <a href="index.php?c=plan&a=planjihuabj&exp=<?php echo $planexp; ?>&name=<?php echo $value; ?>" target="three"><?php echo $value; ?></a>
+    <?php } ?>
+</body>
+</html>

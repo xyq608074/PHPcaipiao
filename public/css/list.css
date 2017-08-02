@@ -1,0 +1,110 @@
+.listinfo{
+    background: #fff;
+    margin: 30px auto;
+    width: 1200px;
+    min-height: 100px;
+    padding:20px 0;
+    text-align: center;
+}
+.listinfo a{
+    color: #555555;
+    font-size: 14px;
+}
+.listinfo table{
+    width: 100%;
+    border-collapse: collapse;
+    border: 1px solid #666;
+}
+.listinfo table tr td{
+    height: 30px;
+}
+.listinfo table ul{
+    width:100%;
+    margin:0 auto;
+}
+.listinfo table ul li{
+    float: left;
+    width:20px;
+    height: 20px;
+    line-height:20px;
+    text-align: center;
+    color:#fff;
+    margin-right: 5px;
+}
+.cq{
+    background: #0092DD;
+    border-radius: 30px;
+}
+
+.n01{
+    background: #E6DE00;
+    border-radius: 6px;
+}
+.n02{
+    background: #0092DD;
+    border-radius: 6px;
+}
+.n03{
+    background: #4B4B4B;
+    border-radius: 6px;
+}
+.n04{
+    background: #FF7600;
+    border-radius: 6px;
+}
+.n05{
+    background: #17E2E5;
+    border-radius: 6px;
+}
+.n06{
+    background: #5234FF;
+    border-radius: 6px;
+}
+.n07{
+    background: #BFBFBF;
+    border-radius: 6px;
+}
+.n08{
+    background: #FF2600;
+    border-radius: 6px;
+}
+.n09{
+    background: #780B00;
+    border-radius: 6px;
+}
+.n10{
+    background: #07BF00;
+    border-radius: 6px;
+}
+.jihua{
+    width: 1200px;
+    margin: 30px auto;
+    background: #fff;
+}
+
+@media screen and (min-width: 960px) and (max-width: 1199px){
+    .listinfo{
+        width:930px;
+    }
+    .jihua{
+        width: 930px;
+    }
+}
+
+@media screen and (min-width: 786px) and (max-width: 959px){
+    .listinfo{
+        width:750px;
+    }
+    .jihua{
+        width: 750px;
+    }
+}
+
+@media screen and (max-width:787px){
+    .listinfo{
+        width:100%;
+    }
+    .jihua{
+        width: 100%;
+    }
+}

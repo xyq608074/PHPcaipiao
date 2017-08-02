@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8" />
+    <title>main</title>
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/basic.css" />
+    <script src="application/view/admin/js/admin_content.js"></script>
+    <script src="application/view/admin/ckeditor/ckeditor.js"></script>
+</head>
+
+<body id="main">
+
+<div class="map">
+    内容管理 &gt;&gt; 查看文档列表 &gt;&gt; <strong id="title">新增文档</strong>
+</div>
+
+<ol>
+    <li><a href="index.php?p=admin&c=content&a=content" >文档列表</a></li>
+    <li><a href="index.php?p=admin&c=content&a=addcontent" class="selected">新增文档</a></li>
+</ol>
+    <form method="post" name="content" action="index.php?p=admin&c=content&a=add" enctype="multipart/form-data">
+        <table cellspacing="0" class="content" border="0">
+            <tr><th><strong>发布一条新文档</strong></th></tr>
+            <tr><td>文档标题：<input type="text" name="title" class="text" /> <span class="red">[必填]</span>( * 在2-50个字符之间 )</td></tr>
+            <tr><td>栏　　目：<select name="nav">
+                                <option value="0">请选择一个栏目类别</option>
+                                    <?php foreach($navlist as $value){ ?>
+                                            <option value="<?php echo $value['id']; ?>"><?php echo $value['nav_name']; ?></option>
+                                    <?php } ?>
+                             </select> <span class="red">[必填]</span> </td></tr>
+            <tr><td>定义属性：<input type="checkbox" name="type[]" value="头条" />头条
+                            <input type="checkbox" name="type[]" value="推荐" />推荐
+                            <input type="checkbox" name="type[]" value="加粗" />加粗
+                            <input type="checkbox" name="type[]" value="幻灯" />幻灯
+                </td></tr>
+            <tr><td>标　　签：<input type="text" name="tag" class="text" /> ( * 每个标签用逗号隔开,不得大于30个字符 ) </td></tr>
+            <tr><td>关 键 字：<input type="text" name="keyword" class="text" /> ( * 每个关键字用逗号隔开,不得大于30个字符 ) </td></tr>
+            <tr>
+                <td>缩 略 图：<input type="text" name="thumbnail" class="text" id="thumbnail" readonly/>
+                    <input type="button" value="点击上传" name="file" onclick="fileOpenWindow('index.php?p=admin&c=content&a=addupload','upload',400,150)">
+                    ( * 缩略图支持jpg png gif格式 并且不得大于200KB )
+                             <img name="uploadpic" style="display: none;padding-left: 55px;" id="uploadpic">
+                </td>
+            </tr>
+            <tr><td>作　　者：<input type="text" name="author" class="text" value="<?php echo $_SESSION['userinfo']['admin_name']; ?>"/> ( * 作者不得大于20个字符 ) </td></tr>
+            <tr><td><span class="middle">内容摘要：</span><textarea name="info"></textarea> ( * 内容摘要不得大于200个字符 ) </td></tr>
+            <tr>
+                <td><span>详细内容：</span>
+                    <textarea style="width:100%;" id="ckcontent" name="content" class="ckeditor"></textarea>
+                </td>
+            </tr>
+            <tr><td>评论选项：<input type="radio" name="commend" value="1" checked="checked" />允许评论
+                    <input type="radio" name="commend" value="0" />禁止评论
+                    　　　　
+                </td></tr>
+            <tr><td>文档排序：<select name="sort">
+                        <option value="0">默认排序</option>
+                        <option value="1">置顶一天</option>
+                        <option value="2">置顶一周</option>
+                        <option value="3">置顶一月</option>
+                        <option value="4">置顶一年</option>
+                    </select>
+                    　 　　消费金币：<input type="text" name="gold" value="0" class="text small" />
+                </td></tr>
+            <tr><td>阅读权限：<select name="readlimit">
+                        <option value="0">开放浏览</option>
+                        <option value="1">初级会员</option>
+                        <option value="2">中级会员</option>
+                        <option value="3">高级会员</option>
+                        <option value="4">VIP会员</option>
+                    </select>
+                    　 　　浏览次数：<input type="text" name="count" value="<?php echo rand(120,500);?>" class="text small" />
+                </td></tr>
+            <tr><td><input type="submit" name="send" value="发布文档" onclick="return checkContent();"/> <input type="reset" value="重置" /></td></tr>
+            <tr><td></td></tr>
+        </table>
+    </form>
+</body>
+</html>

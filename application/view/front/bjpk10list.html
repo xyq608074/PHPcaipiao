@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,user-scalable=no">
+    <meta http-equiv='Content-Type' content='text/html; charset=utf-8' />
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/list.css">
+    <script src="public/js/htmlajax.js"></script>
+    <script src="public/js/hisbtn.js"></script>
+    <title>北京pk拾 - 神马计划开奖网</title>
+</head>
+<body>
+    <div class="content">
+        <?php include CUR_VIEW."header.php"?>
+        <div class="info" id="bjpk10info"></div>
+        <div class="listinfo" id="list" style="display: none;" >
+            <?php if(empty($_SESSION['logininfo'])) { ?>
+            <a href="index.php?c=login&a=login">没有登陆不能查看历史,点击登陆</a>
+            <?php }else{ ?>
+            <table border="1">
+                <tr>
+                    <th>时间</th>
+                    <th>期数</th>
+                    <th>号码</th>
+                </tr>
+                <?php foreach($bjinfo as $value) {
+                        foreach($value as $v){
+                ?>
+                <tr>
+                    <td><?php print_r($v['opentime']);?></td>
+                    <td><?php print_r($v['expect']);?></td>
+
+                    <td>
+                        <ul>
+                            <?php foreach(explode(',',$v['opencode']) as $v){ ?>
+                            <li class="n<?php echo $v?>"><?php echo preg_replace('/^0*/', '', $v)?></li>
+                            <?php } ?>
+                        </ul>
+                    </td>
+                </tr>
+                <?php }} ?>
+            </table>
+            <!--<iframe src="http://kj.1680210.com/view/pk10_list.html?1?10001?s" width="100%" height="600px" scrolling="no" frameborder="0" style="height: 600px;"></iframe>-->
+            <?php } ?>
+        </div>
+        <div class="jihua">
+            <?php if(empty($_SESSION['logininfo'])) { ?>
+            <a href="index.php?c=login&a=login">没有登陆不能查看计划,点击登陆</a>
+            <?php }else{ ?>
+            <?php include CUR_VIEW."planframebj.html"?>
+            <?php } ?>
+        </div>
+        <?php include CUR_VIEW."footer.php"?>
+    </div>
+</body>
+</html>

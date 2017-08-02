@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset=utf-8" />
+    <title>main</title>
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/basic.css" />
+    <script src="../js/admin_content.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+</head>
+
+<body id="main">
+
+<div class="map">
+    内容管理 &gt;&gt; 查看文档列表 &gt;&gt; <strong id="title">文档列表</strong>
+</div>
+
+<ol>
+    <li><a href="index.php?p=admin&c=content&a=content" class="selected">文档列表</a></li>
+    <li><a href="index.php?p=admin&c=content&a=addcontent">新增文档</a></li>
+</ol>
+<table cellspacing="0">
+    <tr><th>编号</th><th>标题</th><th>属性</th><th>文档类别</th><th>浏览次数</th><th>文档发布时间</th><th>操作</th></tr>
+    <?php if(!empty($contentlist)) { ?>
+    <?php foreach($contentlist as $key=>$value) { ?>
+    <tr>
+        <td><?php echo $key+1 ?></td>
+        <td><a href="#<?php echo $value[id]; ?>" target="_blank" title="<?php echo $value['title']; ?>"><?php echo $value['title']; ?></a></td>
+        <td><?php echo $value['type']; ?></td>
+        <td>
+            <a href="?action=show&nav={@value->nav}">
+                <?php
+                    foreach($navlist as $v){
+                        if($v['id']==$value['nav']){
+                            echo $v['nav_name'];
+                        }
+                    }
+                ?>
+            </a>
+        </td>
+        <td><?php echo $value['count'];?>次</td>
+        <td><?php echo $value['date'];?></td>
+        <td><a href="index.php?p=admin&c=content&a=updatecontent&id=<?php echo $value['id']; ?>">修改</a>|<a href="index.php?p=admin&c=content&a=delete&id=<?php echo $value['id']; ?>" onclick="return confirm('真的要删除吗?')">删除</a></td>
+    </tr>
+    <?php } ?>
+    <?php }else{ ?>
+    <tr><td colspan="7">没有数据</td></tr>
+    <?php } ?>
+</table>
+
+<form action="index.php?p=admin&c=content&a=content" method="post">
+    <div id="page">
+        <?php echo $page->showNumPage();?>
+
+        <select name="nav" class="select">
+            <option value="0">默认全部</option>
+            <?php foreach($navlist as $value) { ?>
+            <option value="<?php echo $value['id'];?>" <?php $this->selectnav($value['id']);?> ><?php echo $value['nav_name'];?></option>
+            <?php } ?>
+        </select>
+        <input type="submit" value="查询">
+    </div>
+</form>
+
+</body>
+</html>

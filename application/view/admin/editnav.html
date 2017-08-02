@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>添加导航</title>
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/basic.css" />
+    <script src="js/admin_nav.js"></script>
+</head>
+<body id="main">
+
+<div class="map">
+    内容管理 &gt;&gt; 设置网站导航 &gt;&gt; <strong id="title">修改导航</strong>
+</div>
+<ol>
+    <li><a href="index.php?p=admin&c=nav&a=nav&parent_id=0" >导航列表</a></li>
+    <li><a href="index.php?p=admin&c=nav&a=edit&parent_id=<?php echo $_GET['parent_id']?>" class="selected">修改导航</a></li>
+</ol>
+<form method="post" action="index.php?p=admin&c=nav&a=update">
+    <table cellspacing="0" class="left">
+        <tr>
+            <td>上级导航：
+                <select name="parent_id">
+                    <option value="0">顶级分类</option>
+                    <?php foreach ($navlist as $v){ ?>
+                    <?php if($v['parent_id']==0){ ?>
+                    <option value="<?php echo $v['id']; ?>"><?php echo $v['nav_name']; ?></option>
+                    <?php } ?>
+                    <?php } ?>
+                </select>
+            </td>
+        </tr>
+        <tr><td>导航名称：<input type="text" name="nav_name" class="text" value="<?php echo stripslashes($nav['nav_name']); ?>"/></td></tr>
+        <tr><td>导航说明：<textarea name="nav_info" id="" cols="30" rows="10"><?php echo stripslashes($nav['nav_info']); ?></textarea></td></tr>
+        <tr><td>导航排序：<input type="text" name="sort" class="text" value="<?php echo $nav['sort']?>"></td></tr>
+        <tr>
+            <td>是否显示：
+                <input type="radio" value="1" name="is_show" <?php echo $nav['is_show']==1?'checked':''; ?>>是
+                <input type="radio" name="is_show" value="0" <?php echo $nav['is_show']==0?'checked':''; ?>>否
+        </tr>
+        <tr><td><input type="submit" name="send" value="修改导航" class="submit subnav" /> [ <a href="index.php?p=admin&c=nav&a=nav&parent_id=0">返回列表</a> ]</td></tr>
+    </table>
+    <input type="hidden" name="id" value="<?php echo $_GET['parent_id']?>"/>
+</form>
+</body>
+</html>

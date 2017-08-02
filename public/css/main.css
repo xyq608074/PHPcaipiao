@@ -1,0 +1,231 @@
+div.info{
+    width: 1200px;
+    height:250px;
+    margin: 30px auto;
+    background: #fff;
+}
+div.logo{
+    float: left;
+}
+div.logo img{
+    padding:40px 0 0 60px;
+}
+div.logo span {
+    display: block;
+    padding:40px 0 0 70px;
+}
+
+div.txtnum{
+    width:900px;
+    float: left;
+    padding:30px 0;
+    margin-left: 20px;
+}
+div.txtnum span b{
+    color: red;
+}
+div.txtnum ul{
+    padding: 20px 0 0 0 ;
+}
+div.txtnum ul li{
+    float: left;
+    width:60px;
+    line-height: 60px;
+    text-align: center;
+    margin-right: 30px;
+    font-size: 35px;
+    font-weight: 900;
+    color: #fff;
+}
+div.txtnum div.zuhe{
+    clear: both;
+    padding:20px 0 0 0 ;
+}
+div.txtnum div.zuhe table{
+    float: left;
+    width: 250px;
+    height: 80px;
+    text-align: center;
+    border-collapse:collapse;
+    border:1px solid #ccc;
+    margin-right: 50px;
+}
+div.txtnum div.zuhe table b{
+    color: red;
+}
+
+a.button{
+    float: left;
+    width: 100px;
+    line-height:30px;
+    color: #c0c0c0;
+    border-radius: 5px;
+    text-align: center;
+    padding:10px;
+    margin:20px 0 0 60px;
+    border:1px solid #c0c0c0;
+}
+.loginname{
+    color: #c0c0c0;
+    font-size: 14px;
+}
+.loginname a{
+    color: #c0c0c0;
+}
+
+.n01{
+    background: #E6DE00;
+    border-radius: 6px;
+}
+.n02{
+    background: #0092DD;
+    border-radius: 6px;
+}
+.n03{
+    background: #4B4B4B;
+    border-radius: 6px;
+}
+.n04{
+    background: #FF7600;
+    border-radius: 6px;
+}
+.n05{
+    background: #17E2E5;
+    border-radius: 6px;
+}
+.n06{
+    background: #5234FF;
+    border-radius: 6px;
+}
+.n07{
+    background: #BFBFBF;
+    border-radius: 6px;
+}
+.n08{
+    background: #FF2600;
+    border-radius: 6px;
+}
+.n09{
+    background: #780B00;
+    border-radius: 6px;
+}
+.n10{
+    background: #07BF00;
+    border-radius: 6px;
+}
+.cq{
+    background: #0092DD;
+    border-radius: 30px;
+}
+
+@media screen and (min-width: 960px) and (max-width: 1199px){
+    div.info{
+        width: 930px;
+    }
+    div.logo {
+        float: left;
+    }
+    div.logo img{
+        padding:30px 0 0 10px;
+    }
+    div.logo span{
+        padding: 20px 0 0 30px;
+    }
+    div.txtnum {
+        width: 750px;
+        float: left;
+        padding: 10px 0;
+    }
+    div.txtnum ul li {
+        margin-right: 10px;
+        font-weight: 700;
+    }
+    div.txtnum div.zuhe table {
+        margin-right: 30px;
+    }
+}
+@media screen and (min-width: 786px) and (max-width: 959px){
+    div.info{
+        width:750px;
+    }
+    div.logo {
+        float: left;
+    }
+    div.logo img{
+        padding:30px 0 0 10px;
+    }
+    div.logo span{
+        padding: 20px 0 0 20px;
+    }
+    div.txtnum {
+        width: 600px;
+        float: left;
+        padding: 10px 0;
+    }
+    div.txtnum ul li {
+        width:50px;
+        line-height:50px;
+        margin-right: 10px;
+        font-weight: 700;
+    }
+    div.txtnum div.zuhe table {
+        float: left;
+        width: 200px;
+        height: 80px;
+        text-align: center;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+        margin-right: 30px;
+    }
+    a.button {
+         width: 100px;
+         padding: 5px;
+         margin: 20px 0 0 20px;
+    }
+}
+@media screen and (max-width:787px){
+    div.info{
+        width:100%;
+    }
+    div.logo {
+        float: none;
+        width: 100%;
+    }
+    div.logo img{
+        display: none;
+    }
+    div.logo span{
+        padding: 20px 0 0 20px;
+    }
+    div.txtnum {
+        margin-left:5px;
+        width: 100%;
+        float: left;
+        padding: 10px 0;
+    }
+    div.txtnum ul li {
+        font-size: 20px;
+        width:30px;
+        line-height:30px;
+        margin-right: 1px;
+        font-weight: 700;
+
+    }
+    div.txtnum div.zuhe table {
+        width: 30%;
+        height: 80px;
+        text-align: center;
+        border-collapse: collapse;
+        border: 1px solid #ccc;
+        margin-right: 5px;
+    }
+    a.button {
+        width: 30%;
+        padding: 5px;
+        margin: 20px 0 0 0;
+    }
+}
+
+
+
+

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0">
+
+    <link rel="stylesheet" href="public/css/style.css">
+    <link rel="stylesheet" href="public/css/main.css">
+    <link rel="stylesheet" href="public/css/login.css">
+    <title>登陆</title>
+</head>
+<body>
+<header>
+    <div class="login">
+        <form id="adminLogin" method="post" action="index.php?c=login&a=logininfo">
+            <fieldset>
+                <legend> 网 站 登 陆 </legend>
+                <label>账　号：<input type="text" name="loginname" class="text" /></label>
+                <label>密　码：<input type="password" name="loginpwd" class="text" /></label>
+                <label>验证码：<input type="text" name="code" class="text" /></label>
+                <label class="t">输入下图的字符，不区分大小写</label>
+                <label><img src="index.php?p=admin&c=login&a=captcha" onclick="javascript:this.src='index.php?p=admin&c=login&a=captcha&'+Math.random();" /></label>
+                <input type="submit" value="登录" class="submit" name="send"/>
+            </fieldset>
+        </form>
+    </div>
+    <?php include CUR_VIEW."footer.php"; ?>
+</header>
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>main</title>
+<link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+<link rel="stylesheet" type="text/css" href="application/view/admin/style/basic.css" />
+<script src="js/admin_nav.js"></script>
+</head>
+<body id="main">
+
+<div class="map">
+	内容管理 &gt;&gt; 设置网站导航 &gt;&gt; <strong id="title">导航列表</strong>
+</div>
+<ol>
+	<li><a href="index.php?p=admin&c=nav&a=nav&parent_id=0" class="selected">导航列表</a></li>
+	<li><a href="index.php?p=admin&c=nav&a=addnav">添加导航</a></li>
+</ol>
+	<form action="index.php?p=admin&c=nav&a=sortnav" method="post">
+		<table cellspacing="0">
+			<tr><th>编号</th><th>导航名称</th><th>导航说明</th><th>操作</th><th>是否显示</th><th>排序</th></tr>
+				<?php if(!empty($navlist)) { ?>
+				<?php foreach ($navlist as $k=>$v){ ?>
+				<tr>
+					<td><?php echo $k+1?></td>
+					<td><?php echo stripslashes($v['nav_name']);?></td>
+					<td><?php echo stripslashes($v['nav_info']);?></td>
+					<td><a href="index.php?p=admin&c=nav&a=edit&parent_id=<?php echo $v['id']?>">修改</a> | <a href="index.php?p=admin&c=nav&a=delete&parent_id=<?php echo $v['id']?>" onclick="return confirm('真的要删除吗?')">删除</a></td>
+					<td><a href="#"><?php echo $v['is_show']==1?'是':'否'; ?></a></td>
+					<td><input type="text" name="sort[<?php echo $v['id']?>]" value="<?php echo $v['sort']; ?>" class="text sort"></td>
+				</tr>
+			    <?php } ?>
+
+				<tr><td colspan="5"></td><td><input type="submit" name="send" value="排序" style="cursor:pointer"></td></tr>
+				<?php  }else{  ?>
+				<tr><td colspan="6">没有数据</td></tr>
+				<?php } ?>
+		</table>
+	</form>
+	<div id="page">
+		<?php echo $page->showTxtPage(); ?>
+	</div>
+</body>
+</html>

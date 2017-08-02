@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<head>
+    <meta charset="UTF-8">
+    <title>添加等级</title>
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/admin.css" />
+    <link rel="stylesheet" type="text/css" href="application/view/admin/style/basic.css" />
+    <script src="js/admin_level.js"></script>
+</head>
+<body id="main">
+
+<div class="map">
+    内容管理 &gt;&gt; 设置网站等级 &gt;&gt; <strong id="title">添加等级</strong>
+</div>
+<ol>
+    <li><a href="index.php?p=admin&c=level&a=level" >等级列表</a></li>
+    <li><a href="index.php?p=admin&c=level&a=addlevel" class="selected">添加等级</a></li>
+</ol>
+<form method="post" action="index.php?p=admin&c=level&a=insert">
+    <table cellspacing="0" class="left">
+        <tr><td>等级名称：<input type="text" name="level_name" class="text" /></td></tr>
+        <tr><td>等级说明：<textarea name="level_info" id="" cols="30" rows="10"></textarea></td></tr>
+        <tr><td><input type="submit" name="send" value="新增等级" class="submit sublevel" /> [ <a href="index.php?p=admin&c=level&a=level">返回列表</a> ]</td></tr>
+    </table>
+</form>
+</body>
+</html>
